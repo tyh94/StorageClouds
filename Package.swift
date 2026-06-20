@@ -14,7 +14,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../Storage"),
+        .package(url: "https://github.com/tyh94/Storage.git", from: "1.0.0"),
         .package(url: "https://github.com/yandexmobile/yandex-login-sdk-ios.git", from: "3.1.0"),
         .package(url: "https://github.com/weichsel/ZIPFoundation.git", from: "0.9.19"),
         .package(url: "https://github.com/google/GoogleSignIn-iOS.git", from: "9.1.0"),
