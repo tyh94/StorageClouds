@@ -36,7 +36,7 @@ final class GoogleDriveFileStorage: FileStorage, @unchecked Sendable {
     }
     
     private let rootPath: String
-    private let logger: Logger?
+    private let logger: Storage.Logger?
     private let network: NetworkManaging
     
     private let baseURL = URL(string: "https://www.googleapis.com/drive/v3")!
@@ -45,7 +45,7 @@ final class GoogleDriveFileStorage: FileStorage, @unchecked Sendable {
     init(
         rootPath: String,
         network: NetworkManaging,
-        logger: Logger? = nil
+        logger: Storage.Logger? = nil
     ) {
         self.rootPath = rootPath
         self.logger = logger
@@ -532,10 +532,10 @@ private struct GoogleUploadSession: Codable {
     let fileId: String
 }
 
-extension Logger {
+extension Storage.Logger {
     fileprivate func logGoogle(
         _ message: String,
-        level: LogLevel,
+        level: Storage.LogLevel,
         file: String = #file,
         function: String = #function,
         line: Int = #line

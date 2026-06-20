@@ -27,12 +27,12 @@ final class YandexFileStorage: FileStorage {
     
     private let network: NetworkManaging
     private let rootPath: String
-    private let logger: Logger?
+    private let logger: Storage.Logger?
     
     init(
         rootPath: String,
         network: NetworkManaging,
-        logger: Logger? = nil
+        logger: Storage.Logger? = nil
     ) {
         self.rootPath = rootPath
         self.network = network
@@ -348,10 +348,10 @@ final class YandexFileStorage: FileStorage {
     }
 }
 
-extension Logger {
+extension Storage.Logger {
     fileprivate func logYandex(
         _ message: String,
-        level: LogLevel,
+        level: Storage.LogLevel,
         file: String = #file,
         function: String = #function,
         line: Int = #line
