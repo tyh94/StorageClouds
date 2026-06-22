@@ -30,6 +30,9 @@ let package = Package(
                 .product(name: "GoogleSignIn", package: "GoogleSignIn-iOS"),
                 .product(name: "Storage", package: "Storage"),
             ],
+            resources: [
+                .process("Resources")
+            ]
         ),
         .testTarget(
             name: "StorageCloudsTests",
