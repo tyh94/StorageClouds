@@ -21,7 +21,7 @@ public extension FileStorageFactory {
     convenience init(
         network: NetworkManaging,
         tokenFactory: FileStorageTokenFactory,
-        logger: StorageLogger?
+        logger: (Storage.Logger & MKVNetwork.Logger)?
     ) {
         self.init() { storage in
             switch storage {
