@@ -16,18 +16,18 @@ public enum FileStorageTokenFactoryType {
 public typealias FileStorageTokenFactory = Factory<FileStorageTokenFactoryType, TokenStorage>
 
 public extension FileStorageTokenFactory {
-    convenience init() {
+    convenience init(keyStorage: KeyValueStorage) {
         self.init { storage in
             switch storage {
             case .googleDrive:
                 return FileStorageTokenService(
                     key: "GoogleDriveTokenKey",
-                    storage: KeychainStorage()
+                    storage: keyStorage
                 )
             case .yandex:
                 return FileStorageTokenService(
                     key: "YandexDiskTokenKey",
-                    storage: KeychainStorage()
+                    storage: keyStorage
                 )
             }
         }
